@@ -23,7 +23,8 @@ CREATE TABLE mesa (
 );
 CREATE TABLE familia (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	nombre VARCHAR(14)
+	nombre VARCHAR(14),
+    CONSTRAINT unique_familia_nombre UNIQUE (nombre)
 );
 CREATE TABLE producto (
     id INT PRIMARY KEY AUTO_INCREMENT,
