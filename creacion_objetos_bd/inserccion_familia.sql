@@ -1,4 +1,4 @@
-INSERT INTO familia(nombre)
+INSERT INTO familia(id, nombre)
 VALUES
 (1, 'desayunos'),
 (2, 'especialidades'),
