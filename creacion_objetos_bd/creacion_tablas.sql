@@ -1,5 +1,7 @@
+DROP DATABASE sgbd;
 CREATE DATABASE sgbd;
 USE sgbd;
+
 CREATE TABLE cliente (
     id VARCHAR(8) PRIMARY KEY DEFAULT(LEFT(UUID(),8)),
     nombre VARCHAR(32) NOT NULL,
@@ -14,18 +16,17 @@ CREATE TABLE mozo (
     apellido_paterno VARCHAR(32) NOT NULL,
     apellido_materno VARCHAR(32) NOT NULL
 );
-
 CREATE TABLE mesa (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     estado VARCHAR(9) NOT NULL DEFAULT 'LIBRE',
     CONSTRAINT check_mesa_estado CHECK(estado IN ('RESERVADA', 'OCUPADA', 'LIBRE', 'INACTIVA'))
 );
 CREATE TABLE familia (
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(14)
 );
 CREATE TABLE producto (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     familia_id INT,
     descripcion TEXT,
@@ -35,7 +36,7 @@ CREATE TABLE producto (
 );
 
 CREATE TABLE pedido (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     estado VARCHAR(9) NOT NULL DEFAULT 'PENDIENTE',
     fecha DATETIME NOT NULL DEFAULT NOW(),
     mozo_id VARCHAR(8),
@@ -60,7 +61,7 @@ CREATE TABLE producto_pedido (
 );
 
 CREATE TABLE reserva (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     fecha_inicio DATETIME NOT NULL,
     fecha_fin DATETIME NOT NULL,
     precio_adicional DECIMAL(6,2),
@@ -91,8 +92,10 @@ CREATE TABLE factura (
 
 CREATE TABLE boleta (
     venta_id VARCHAR(8),
-    dni VARCHAR(15) NOT NULL,
+    dni VARCHAR(8) NOT NULL,
     PRIMARY KEY (venta_id, dni),
     CONSTRAINT fk_boleta_venta_id FOREIGN KEY (venta_id) REFERENCES venta(id)
 );
+
+
 	
