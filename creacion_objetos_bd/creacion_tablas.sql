@@ -1,4 +1,4 @@
-DROP DATABASE sgbd;
+DROP DATABASE IF EXISTS sgbd;
 CREATE DATABASE sgbd;
 USE sgbd;
 
@@ -19,6 +19,8 @@ CREATE TABLE mozo (
 CREATE TABLE mesa (
     id INT PRIMARY KEY AUTO_INCREMENT,
     estado VARCHAR(9) NOT NULL DEFAULT 'LIBRE',
+    inicio_reserva DATETIME NULL,
+    fin_reserva DATETIME NULL,
     CONSTRAINT check_mesa_estado CHECK(estado IN ('RESERVADA', 'OCUPADA', 'LIBRE', 'INACTIVA'))
 );
 CREATE TABLE familia (
