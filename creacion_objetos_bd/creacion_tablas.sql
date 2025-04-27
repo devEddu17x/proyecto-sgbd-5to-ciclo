@@ -90,14 +90,16 @@ CREATE TABLE factura (
     venta_id VARCHAR(8),
     ruc VARCHAR(11) NOT NULL,
     PRIMARY KEY (venta_id, ruc),
-    CONSTRAINT fk_factura_venta_id FOREIGN KEY (venta_id) REFERENCES venta(id)
+    CONSTRAINT fk_factura_venta_id FOREIGN KEY (venta_id) REFERENCES venta(id),
+    CONSTRAINT check_factura_ruc_length CHECK (CHAR_LENGTH(ruc) = 11)
 );
 
 CREATE TABLE boleta (
     venta_id VARCHAR(8),
     dni VARCHAR(8) NOT NULL,
     PRIMARY KEY (venta_id, dni),
-    CONSTRAINT fk_boleta_venta_id FOREIGN KEY (venta_id) REFERENCES venta(id)
+    CONSTRAINT fk_boleta_venta_id FOREIGN KEY (venta_id) REFERENCES venta(id),
+    CONSTRAINT check_boleta_dni_length CHECK (CHAR_LENGTH(dni) = 8)
 );
 
 
