@@ -1,0 +1,11 @@
+INSERT INTO mesa (estado) VALUES
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'),
+('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE'), ('LIBRE');

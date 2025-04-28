@@ -1,0 +1,16 @@
+INSERT INTO cliente (id, nombre, apellido_paterno, apellido_materno, telefono) VALUES
+('CLI00001', 'Elena', 'Quispe', 'Flores', '987654321'),
+('CLI00002', 'Ricardo', 'Soto', 'Vega', '912345678'),
+('CLI00003', 'Maria', 'Chavez', 'Rios', '998877665'),
+('CLI00004', 'Jorge', 'Benites', 'Silva', '965432109'),
+('CLI00005', 'Sofia', 'Castro', 'Mendoza', '945678901'),
+('CLI00006', 'Luis', 'Ramirez', 'Guillen', '932109876'),
+('CLI00007', 'Carmen', 'Herrera', 'Paredes', '978901234'),
+('CLI00008', 'Andres', 'Morales', 'Cruz', '923456789'),
+('CLI00009', 'Beatriz', 'Ortega', 'Reyes', '956789012'),
+('CLI00010', 'Fernando', 'Jimenez', 'Navarro', '989012345'),
+('CLI00011', 'Gabriela', 'Ruiz', 'Alvarez', '911223344'),
+('CLI00012', 'Diego', 'Moreno', 'Romero', '955667788'),
+('CLI00013', 'Valeria', 'Gil', 'Iglesias', '999001122'),
+('CLI00014', 'Martin', 'Santos', 'Blanco', '933445566'),
+('CLI00015', 'Paula', 'Pastor', 'Nuñez', '977889900');
