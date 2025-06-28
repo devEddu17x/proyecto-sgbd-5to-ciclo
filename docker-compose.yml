@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-sgbd
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: dev
+      MYSQL_DATABASE: sgbd
+      MYSQL_USER: eddu
+      MYSQL_PASSWORD: dev
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_sgbd:/var/lib/mysql
+      - ./config.cnf:/etc/mysql/conf.d/config.cnf
+      - ./certs/server:/etc/mysql/ssl
+
+volumes:
+  mysql_sgbd:
