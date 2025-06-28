@@ -3,4 +3,3 @@ docker-compose.yml
 node_modules
 *.bak
 *.zip
-*.pem
