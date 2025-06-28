@@ -1,0 +1,48 @@
+[mysqld]
+# BUFFER_POOl
+innodb_buffer_pool_size = 4G
+innodb_buffer_pool_instances = 8
+innodb_buffer_pool_chunk_size = 128M
+# FLUSHING
+innodb_idle_flush_pct = 30
+innodb_max_dirty_pages_pct_lwm = 15
+innodb_max_dirty_pages_pct = 80
+# CHANGE_BUFFER
+innodb_change_buffering = all
+innodb_change_buffer_max_size = 15
+# ADAPTIVE HASH INDEX
+innodb_adaptive_hash_index = 1
+# REDO LOG
+innodb_redo_log_capacity = 536870912
+innodb_log_buffer_size=64M
+max_connections = 15
+wait_timeout = 300
+interactive_timeout = 300
+thread_cache_size = 8
+max_connect_errors = 10
+
+# TABLESPACE
+innodb_file_per_table = 1
+
+# UNDO TABLESPACE
+innodb_undo_tablespaces = 2
+innodb_undo_log_truncate = 1
+# innodb_temp_tablespaces_dir = /var/lib/mysql/temp_data
+# innodb_undo_directory = /var/lib/mysql/undo_data
+
+# TEMPORARY TABLESPACE
+innodb_temp_data_file_path = ibtmp1:64M:autoextend
+
+# AUDIT LOG
+# audit_log_format = JSON
+# audit_log_file = /var/log/mysql/audit.log
+# audit_log_rotate_on_size = 104857600
+# audit_log_policy = QUERIES
+
+
+# SSL
+ssl-ca=/etc/mysql/ssl/ca.pem
+ssl_cert=/etc/mysql/ssl/server-cert.pem
+ssl_key=/etc/mysql/ssl/server-key.pem
+require_secure_transport=ON
+bind-address = 0.0.0.0
