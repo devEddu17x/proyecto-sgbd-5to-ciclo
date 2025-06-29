@@ -1,3 +1,5 @@
+drop database if exists sgbd;
+create database sgbd;
     DROP DATABASE IF EXISTS rcep;
     CREATE DATABASE rcep;
     USE rcep;
@@ -59,24 +61,10 @@
         pedido_id INT,
         producto_id INT,
         cantidad INT NOT NULL DEFAULT 1,
-        cantidad INT,
     PRIMARY KEY (pedido_id, producto_id),
         CONSTRAINT fk_producto_pedido_pedido_id FOREIGN KEY (pedido_id) REFERENCES pedido(id),
         CONSTRAINT fk_producto_pedido_producto_id FOREIGN KEY (producto_id) REFERENCES producto(id),
-        CONSTRAINT check_producto_pedido_cantidad CHECK (cantidad > 0),
-    CONSTRAINT check_producto_pedido_cantidad CHECK (cantidad >= 0)
-    );
-
-    CREATE TABLE reserva (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        fecha_inicio DATETIME NOT NULL,
-        fecha_fin DATETIME NOT NULL,
-        precio_adicional DECIMAL(6,2),
-        cliente_id VARCHAR(8),
-        pedido_id INT,
-        CONSTRAINT fk_reserva_cliente_id FOREIGN KEY (cliente_id) REFERENCES cliente(id),
-        CONSTRAINT fk_reserva_pedido_id FOREIGN KEY (pedido_id) REFERENCES pedido(id),
-        CONSTRAINT check_reserva_precio_adicional CHECK (precio_adicional >= 0)
+        CONSTRAINT check_producto_pedido_cantidad CHECK (cantidad > 0)
     );
 CREATE TABLE reserva (
     id INT PRIMARY KEY AUTO_INCREMENT,

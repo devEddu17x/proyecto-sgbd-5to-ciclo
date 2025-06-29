@@ -1,0 +1,40 @@
+services:
+  mysql-master:
+    image: mysql:8.4
+    container_name: mysql-master
+    restart: no
+    environment:
+      MYSQL_ROOT_PASSWORD: master
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./master/conf.d:/etc/mysql/conf.d
+      - master-data:/var/lib/mysql
+      - ./certs/server:/etc/mysql/ssl
+    networks:
+      - repl-net
+  
+  mysql-slave:
+    image: mysql:8.4
+    container_name: mysql-slave
+    restart: no
+    depends_on:
+      - mysql-master
+    environment:
+      MYSQL_ROOT_PASSWORD: slave
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./slave/conf.d:/etc/mysql/conf.d
+      - slave-data:/var/lib/mysql
+      - ./certs/client:/etc/mysql/ssl
+    networks:
+      - repl-net
+
+volumes:
+  master-data:
+  slave-data:
+
+networks:
+  repl-net:
+    driver: bridge

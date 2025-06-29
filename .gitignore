@@ -1,5 +1,3 @@
-docker-compose.yml
-*.cnf
 node_modules
 *.bak
 *.zip

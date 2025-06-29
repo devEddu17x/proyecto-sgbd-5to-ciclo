@@ -1,0 +1,1 @@
+INSTALL PLUGIN audit_log SONAME 'audit_log.so';
