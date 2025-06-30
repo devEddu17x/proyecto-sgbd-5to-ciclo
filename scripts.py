@@ -35,7 +35,7 @@ def main():
     # Limpiar tablas para evitar duplicados si se ejecuta varias veces
     cursor.execute("SET FOREIGN_KEY_CHECKS = 0;")
     for tbl in ['producto_pedido', 'pedido_mesa', 'venta', 'reserva',
-                'pedido', 'mesa', 'cliente', 'mozo', 'producto', 'familia']:
+                'pedido', 'mesa', 'cliente', 'mozo', 'producto', 'familia']: 
         cursor.execute(f"TRUNCATE TABLE {tbl};")
     cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
     conn.commit()
